@@ -7,4 +7,12 @@
   };
 
   home.stateVersion = "24.05";
+
+  imports = [
+    ./modules/nvim
+  ];
+
+  modules = {
+    nvim.enable = true;
+  };
 }

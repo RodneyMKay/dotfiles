@@ -15,27 +15,31 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs: {
-    nixosConfigurations.janpc = let 
-      hostname = "janpc";
-      username = "jan";
-    in nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
+  outputs = { self, nixpkgs, ... } @ inputs: let 
+    mkHost = { system, hostname, username, inputs }: inputs.nixpkgs.lib.nixosSystem {
+      inherit system;
+      
       specialArgs = {
         inherit inputs hostname username;
       };
-
+      
       modules = [
-	inputs.nixos-wsl.nixosModules.wsl
-	./configuration.nix
-	inputs.home-manager.nixosModules.home-manager
-	{
+        inputs.nixos-wsl.nixosModules.wsl
+        ./hosts/${hostname}/configuration.nix
+        inputs.home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.${username} = import ./home.nix;
-	}
+          home-manager.useUserPackages = true;
+          home-manager.users.${username} = import ./home.nix;
+        }
       ];
+    };
+  in {
+    nixosConfigurations.janpc = mkHost {
+      inherit inputs;
+      system = "x86_64-linux";
+      hostname = "janpc";
+      username = "jan";
     };
   };
 }

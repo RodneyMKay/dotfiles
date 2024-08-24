@@ -5,9 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ hostname, username, config, lib, pkgs, ... }:
-
-{
+{ hostname, username, config, lib, pkgs, ... }: {
   time.timeZone = "Europe/Berlin";
 
   wsl = {
@@ -18,24 +16,7 @@
   networking.hostName = hostname;
 
   environment.systemPackages = [
-    pkgs.neovim
-    pkgs.git
   ];
-
-  environment.variables = {
-    EDITOR = "nvim";
-  };
-  
-  programs = {
-    git.enable = true;
-    neovim.enable = true;
-  };
-
-  programs.neovim = {
-    viAlias = true;
-    vimAlias = true;
-    defaultEditor = true;
-  };
 
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
