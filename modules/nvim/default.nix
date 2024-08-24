@@ -1,14 +1,17 @@
-{ lib, config, ... }:
+inputs: { lib, config, ... }:
 let
   cfg = config.modules.nvim;
 in {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+  ];
+
   options.modules.nvim.enable = lib.mkEnableOption "Enable NeoVim";
 
   config = lib.mkIf cfg.enable {
-    home.file.".config/nvim/init.lua".source = ./init.lua;
-
-    programs.neovim = {
+    programs.nixvim = {
       enable = true;
+
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;

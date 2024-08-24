@@ -18,7 +18,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${username} = import ./home.nix {
-      inherit stateVersion;
+      inherit stateVersion inputs;
     };
   };
 }

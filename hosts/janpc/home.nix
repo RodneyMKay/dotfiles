@@ -1,12 +1,12 @@
-{ stateVersion }: { config, pkgs, ... }: {
+{ stateVersion, inputs }: { config, pkgs, ... }: {
   home.stateVersion = stateVersion;
 
   imports = [
-    ../../modules
+    (import ../../modules inputs)
   ];
 
   modules = {
-    nvim.enable = true;
     git.enable = true;
+    nvim.enable = true;
   };
 }
