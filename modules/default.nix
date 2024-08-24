@@ -1,6 +1,6 @@
-inputs: { lib, config, ... }: {
+{ lib, config, inputs, ... }: {
   imports = [
     ./git
-    (import ./nvim inputs)
+    ./nvim
   ];
 }

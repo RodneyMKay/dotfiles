@@ -1,4 +1,4 @@
-inputs: { lib, config, ... }:
+{ lib, config, inputs, ... }:
 let
   cfg = config.modules.nvim;
 in {

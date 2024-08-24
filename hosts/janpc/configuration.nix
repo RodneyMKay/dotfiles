@@ -1,4 +1,4 @@
-{ hostname, username, stateVersion, config, lib, pkgs, inputs, ... }: {
+{ hostname, username, inputs, stateVersion, config, lib, pkgs, ... }: {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
     inputs.home-manager.nixosModules.home-manager
@@ -15,10 +15,9 @@
   ];
 
   home-manager = {
+    extraSpecialArgs = { inherit inputs stateVersion; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${username} = import ./home.nix {
-      inherit stateVersion inputs;
-    };
+    users.${username}.imports = [ ./home.nix ];
   };
 }

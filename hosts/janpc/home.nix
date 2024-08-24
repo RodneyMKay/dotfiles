@@ -1,8 +1,8 @@
-{ stateVersion, inputs }: { config, pkgs, ... }: {
+{ config, pkgs, stateVersion, inputs, ... }: {
   home.stateVersion = stateVersion;
 
   imports = [
-    (import ../../modules inputs)
+    ../../modules
   ];
 
   modules = {
