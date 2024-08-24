@@ -7,8 +7,13 @@ in {
   config = lib.mkIf cfg.enable {
     programs.git = {
       enable = true;
+
       userName = "RodneyMKay";
       userEmail = "36546810+RodneyMKay@users.noreply.github.com";
+
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
     };
   };
 }
