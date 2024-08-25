@@ -16,6 +16,11 @@ in {
       viAlias = true;
       vimAlias = true;
 
+      globals = {
+        mapleader = " ";
+        maplocalleader = " ";
+      };
+
       opts = {
         updatetime = 100; # Faster screen updates
         mouse = ""; # Disable mouse usage
@@ -44,6 +49,26 @@ in {
           transparent = true;
         };
       };
+
+      plugins.telescope = {
+        enable = true;
+
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>fg" = "live_grep";
+          "<leader>fh" = "help_tags";
+          "<C-p>" = "git_files";
+          "<C-f>" = "live_grep";
+        };
+
+        extensions.fzf-native = {
+          enable = true;
+        };
+      };
+    };
+
+    programs.ripgrep = {
+      enable = true;
     };
   };
 }
