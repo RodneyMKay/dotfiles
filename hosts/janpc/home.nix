@@ -9,5 +9,6 @@
     git.enable = true;
     nvim.enable = true;
     zsh.enable = true;
+    fzf.enable = true;
   };
 }

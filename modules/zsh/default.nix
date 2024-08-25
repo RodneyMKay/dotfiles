@@ -28,10 +28,14 @@ in {
           #"kubectl"
           #"kind"
           #"rsync"
-          "cp" # rsync
-          #"eza"
+          "cp"
+          "eza"
         ];
       };
+    };
+
+    programs.eza = {
+      enable = true;
     };
   };
 }

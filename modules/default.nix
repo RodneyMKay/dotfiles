@@ -3,5 +3,6 @@
     ./git
     ./nvim
     ./zsh
+    ./fzf
   ];
 }
