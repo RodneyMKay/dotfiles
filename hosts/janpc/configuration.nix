@@ -14,6 +14,9 @@
   environment.systemPackages = [
   ];
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   home-manager = {
     extraSpecialArgs = { inherit inputs stateVersion; };
     useGlobalPkgs = true;
