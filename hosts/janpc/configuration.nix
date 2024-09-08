@@ -18,7 +18,11 @@
   environment.systemPackages = [
     pkgs.zip
     pkgs.unzip
+    pkgs.htop
     pkgs.netcat-gnu
+    pkgs.temurin-jre-bin
+    pkgs.tmux
+    pkgs.lean4
   ];
 
   # Enable podman
