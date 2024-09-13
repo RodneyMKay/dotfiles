@@ -20,8 +20,10 @@
     pkgs.unzip
     pkgs.htop
     pkgs.netcat-gnu
-    pkgs.temurin-jre-bin
     pkgs.tmux
+    pkgs.jq
+    pkgs.dig
+    pkgs.temurin-jre-bin
     pkgs.lean4
   ];
 
