@@ -14,6 +14,10 @@ in {
       extraConfig = {
         init.defaultBranch = "main";
       };
+
+      aliases = {
+        unstage = "restore --staged";
+      };
     };
   };
 }
