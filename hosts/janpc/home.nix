@@ -10,6 +10,22 @@
     PODMAN_IGNORE_CGROUPSV1_WARNING = "1";
   };
 
+  # Install unmanaged packages
+  home.packages = with pkgs; [
+    zip
+    unzip
+    htop
+    netcat-gnu
+    tmux
+    jq
+    dig
+    temurin-jre-bin
+    lean4
+    podman-compose
+    nodejs
+    pnpm
+  ];
+
   imports = [
     inputs.private.homeManagerModules.ssh
     ../../modules/home-manager

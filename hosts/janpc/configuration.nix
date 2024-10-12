@@ -14,20 +14,6 @@
   # Set timezone
   time.timeZone = "Europe/Berlin";
 
-  # Unmanaged packages
-  environment.systemPackages = [
-    pkgs.zip
-    pkgs.unzip
-    pkgs.htop
-    pkgs.netcat-gnu
-    pkgs.tmux
-    pkgs.jq
-    pkgs.dig
-    pkgs.temurin-jre-bin
-    pkgs.lean4
-    pkgs.podman-compose
-  ];
-
   # Enable podman
   # TODO: This should probably be in it's own module
   virtualisation.podman = {
