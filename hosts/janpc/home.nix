@@ -11,7 +11,8 @@
   };
 
   imports = [
-    ../../modules
+    inputs.private.homeManagerModules.ssh
+    ../../modules/home-manager
   ];
 
   modules = {
@@ -19,5 +20,6 @@
     nvim.enable = true;
     zsh.enable = true;
     fzf.enable = true;
+    ssh.enable = true;
   };
 }

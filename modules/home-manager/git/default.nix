@@ -9,7 +9,7 @@ in {
       enable = true;
 
       userName = "RodneyMKay";
-      userEmail = "36546810+RodneyMKay@users.noreply.github.com";
+      userEmail = "git@groen.digital";
 
       extraConfig = {
         init.defaultBranch = "main";
@@ -17,6 +17,7 @@ in {
 
       aliases = {
         unstage = "restore --staged";
+        pushnew = "!git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)";
       };
     };
   };
