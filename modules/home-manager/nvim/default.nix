@@ -65,6 +65,10 @@ in {
           enable = true;
         };
       };
+
+      plugins.lastplace = {
+        enable = true;
+      };
     };
 
     programs.ripgrep = {
