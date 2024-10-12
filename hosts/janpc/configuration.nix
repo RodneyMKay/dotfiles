@@ -3,6 +3,7 @@
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
     inputs.home-manager.nixosModules.home-manager
+    ../../modules/nixos
   ];
 
   # WSL settings
@@ -11,22 +12,18 @@
     defaultUser = username;
   };
 
-  # Set timezone
-  time.timeZone = "Europe/Berlin";
-
-  # Enable podman
-  # TODO: This should probably be in it's own module
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    dockerSocket.enable = true;
+  # Enable custom modules
+  modules = {
+    docker.enable = true;
   };
 
   # Set default shell
+  # TODO: Experiment how much of this I can move to home-manager
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   # Manage everything else through home-manager
+  # TODO: This should be standardized for evey host
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -34,4 +31,8 @@
     extraSpecialArgs = { inherit inputs stateVersion; };
     users.${username}.imports = [ ./home.nix ];
   };
+
+  # Set timezone
+  # TODO: Make this an overridable default for all hosts
+  time.timeZone = "Europe/Berlin";
 }
