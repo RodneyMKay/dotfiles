@@ -24,6 +24,9 @@
     podman-compose
     nodejs
     pnpm
+    php83
+    php83Extensions.mysqli
+    php83Packages.composer
   ];
 
   imports = [
