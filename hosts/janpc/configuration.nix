@@ -25,6 +25,7 @@
     pkgs.dig
     pkgs.temurin-jre-bin
     pkgs.lean4
+    pkgs.podman-compose
   ];
 
   # Enable podman
