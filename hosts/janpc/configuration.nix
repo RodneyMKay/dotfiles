@@ -10,11 +10,12 @@
   wsl = {
     enable = true;
     defaultUser = username;
+    docker-desktop.enable = true;
   };
 
   # Enable custom modules
   modules = {
-    docker.enable = true;
+    dynamic-fix.enable = true;
   };
 
   # Set default shell

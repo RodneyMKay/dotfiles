@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./docker
+    ./dynamic-fix
   ];
 }
 
