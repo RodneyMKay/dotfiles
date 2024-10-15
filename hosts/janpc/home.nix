@@ -19,7 +19,6 @@
     tmux
     jq
     dig
-    temurin-jre-bin
     lean4
     podman-compose
     nodejs
@@ -27,6 +26,7 @@
     php83
     php83Extensions.mysqli
     php83Packages.composer
+    temurin-bin
   ];
 
   imports = [
