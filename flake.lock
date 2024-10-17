@@ -315,8 +315,11 @@
         ]
       },
       "locked": {
-        "lastModified": 0,
+        "lastModified": 1728755786,
         "narHash": "sha256-YNlq1zLWaMOSMe7yOrq/QkiiFRiEyGud8pWjjvRLIUI=",
+        "ref": "refs/heads/main",
+        "rev": "3bc5d2026011ee5402b847308cdda438762fa2fa",
+        "revCount": 1,
         "type": "git",
         "url": "file:/home/jan/dotfiles/private"
       },

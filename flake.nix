@@ -53,5 +53,12 @@
       hostname = "janpc";
       username = "jan";
     };
+
+    nixosConfigurations.janfw = mkSystem {
+      inherit inputs;
+      system = "x86_64-linux";
+      hostname = "janfw";
+      username = "jan";
+    };
   };
 }
