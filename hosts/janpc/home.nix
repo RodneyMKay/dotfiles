@@ -27,6 +27,7 @@
     php83Extensions.mysqli
     php83Packages.composer
     temurin-bin
+    sops
   ];
 
   imports = [
