@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     zip
     unzip
+    wget
     htop
     netcat-gnu
     tmux
