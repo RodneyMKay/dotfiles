@@ -29,6 +29,7 @@
     php83Packages.composer
     temurin-bin
     sops
+    scala_3
   ];
 
   imports = [
