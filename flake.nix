@@ -2,7 +2,9 @@
   description = "My (hopefully) awesome dotfiles (:";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    };
 
     private = {
       url = "git+file:/home/jan/dotfiles/private";
@@ -23,6 +25,13 @@
       url = "github:nix-community/nixvim?ref=nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+      # TODO: Pin this if I add unstable nix as an input
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... } @ inputs: let 
@@ -34,11 +43,11 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     stateVersion = "24.05";
 
-    mkSystem = { system, inputs, hostname, username }: nixpkgs.lib.nixosSystem {
+    mkSystem = { system, inputs, hostname, defaultUser }: nixpkgs.lib.nixosSystem {
       inherit system;
       
       specialArgs = {
-        inherit inputs hostname username stateVersion;
+        inherit inputs hostname defaultUser stateVersion;
       };
       
       modules = [
@@ -51,14 +60,14 @@
       inherit inputs;
       system = "x86_64-linux";
       hostname = "janpc";
-      username = "jan";
+      defaultUser = "jan";
     };
 
     nixosConfigurations.janfw = mkSystem {
       inherit inputs;
       system = "x86_64-linux";
       hostname = "janfw";
-      username = "jan";
+      defaultUser = "jan";
     };
   };
 }

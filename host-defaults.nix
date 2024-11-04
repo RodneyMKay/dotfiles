@@ -1,4 +1,4 @@
-{ hostname, username, stateVersion, config, lib, pkgs, inputs, ... }: {
+{ hostname, stateVersion, config, lib, pkgs, inputs, ... }: {
   # Set the properties that we inherit from flake.nix
   networking.hostName = hostname;
   system.stateVersion = stateVersion;

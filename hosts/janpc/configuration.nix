@@ -1,21 +1,23 @@
-{ hostname, username, inputs, stateVersion, config, lib, pkgs, ... }: {
+{ hostname, defaultUser, inputs, stateVersion, config, lib, pkgs, ... }: {
   # Import home manager and nixos-wsl
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
     inputs.home-manager.nixosModules.home-manager
+    inputs.private.nixosModules.secrets
     ../../modules/nixos
   ];
 
   # WSL settings
   wsl = {
     enable = true;
-    defaultUser = username;
+    defaultUser = defaultUser;
     docker-desktop.enable = true;
   };
 
   # Enable custom modules
   modules = {
     dynamic-fix.enable = true;
+    secrets.enable = true;
   };
 
   # Set default shell
@@ -30,7 +32,7 @@
     useUserPackages = true;
 
     extraSpecialArgs = { inherit inputs stateVersion; };
-    users.${username}.imports = [ ./home.nix ];
+    users.${defaultUser}.imports = [ ./home.nix ];
   };
 
   # Set timezone
