@@ -13,6 +13,7 @@ in {
 
       extraConfig = {
         init.defaultBranch = "main";
+        credential.helper = "store --file /run/secrets/git_credentials";
       };
 
       aliases = {
