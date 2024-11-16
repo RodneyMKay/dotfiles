@@ -30,6 +30,7 @@
     temurin-bin
     sops
     scala_3
+    sshfs
   ];
 
   imports = [
