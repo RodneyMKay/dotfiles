@@ -3,6 +3,7 @@
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
     inputs.home-manager.nixosModules.home-manager
+    inputs.private.nixosModules.secrets
     ../../modules/nixos
   ];
 
@@ -16,6 +17,7 @@
   # Enable custom modules
   modules = {
     dynamic-fix.enable = true;
+    secrets.enable = true;
   };
 
   # Set default shell
