@@ -5,8 +5,13 @@ in {
   options.modules.zsh.enable = lib.mkEnableOption "Enable Zsh";
 
   config = lib.mkIf cfg.enable {
-    home.file.".config/oh-my-zsh-custom" = {
-      source = ./oh-my-zsh-custom;
+    home.file.".config/oh-my-zsh-custom/themes" = {
+      source = ./custom-themes;
+      recursive = true;
+    };
+
+    home.file.".config/oh-my-zsh-custom/plugins" = {
+      source = ./custom-plugins;
       recursive = true;
     };
 
@@ -20,16 +25,14 @@ in {
 
         theme = "outoftheloop";
         plugins = [
+          # Builtin plugins
           "git"
-          #"podman"
-          #"docker"
-          #"docker-compose"
-          #"direnv"
-          #"kubectl"
-          #"kind"
-          #"rsync"
+          "rsync"
           "cp"
           "eza"
+
+          # Custom plugins
+          "wslscripts"
         ];
       };
     };
