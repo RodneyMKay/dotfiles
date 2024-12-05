@@ -66,6 +66,10 @@ in {
         };
       };
 
+      plugins.web-devicons = {
+        enable = true;
+      };
+
       plugins.lastplace = {
         enable = true;
       };

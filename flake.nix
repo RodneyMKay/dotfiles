@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs?ref=nixos-24.05";
+      url = "github:nixos/nixpkgs?ref=nixos-24.11";
     };
 
     private = {
@@ -12,7 +12,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager?ref=release-24.05";
+      url = "github:nix-community/home-manager?ref=release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,7 +22,7 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim?ref=nixos-24.05";
+      url = "github:nix-community/nixvim?ref=nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

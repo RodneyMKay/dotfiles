@@ -7,7 +7,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.nix-ld = {
       enable = true;
-      package = pkgs.nix-ld-rs;
       libraries = with pkgs; [
         # Add any missing dynamic libraries for unpackaged programs
         # here, NOT in environment.systemPackages
