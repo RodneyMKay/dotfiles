@@ -20,7 +20,7 @@
     tmux
     jq
     dig
-    lean4
+    elan
     podman-compose
     nodejs
     pnpm
