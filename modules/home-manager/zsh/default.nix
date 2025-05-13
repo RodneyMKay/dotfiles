@@ -33,6 +33,7 @@ in {
 
           # Custom plugins
           "wslscripts"
+          "projects"
         ];
       };
     };
