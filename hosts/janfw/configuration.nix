@@ -35,6 +35,25 @@
     users.${defaultUser}.imports = [ ./home.nix ];
   };
 
+  # Enable nerd fonts and set JetBrains Mono as default
+  fonts = {
+    packages = with pkgs; [
+      nerdfonts
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "JetBrainsMono Nerd Font Mono" ];
+      };
+    };
+  };
+
+  # Enable direnv
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # Set timezone
   # TODO: Make this an overridable default for all hosts
   time.timeZone = "Europe/Berlin";
