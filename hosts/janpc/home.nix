@@ -31,6 +31,7 @@
     sops
     scala_3
     sshfs
+    fastfetch
   ];
 
   imports = [
