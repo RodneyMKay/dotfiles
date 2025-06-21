@@ -32,6 +32,7 @@
     scala_3
     sshfs
     fastfetch
+    inetutils
   ];
 
   imports = [
