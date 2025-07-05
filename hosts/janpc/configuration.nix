@@ -35,6 +35,12 @@
     users.${defaultUser}.imports = [ ./home.nix ];
   };
 
+  # Enable direnv
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # Set timezone
   # TODO: Make this an overridable default for all hosts
   time.timeZone = "Europe/Berlin";
