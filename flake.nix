@@ -8,7 +8,6 @@
 
     private = {
       url = "github:input-output-hk/empty-flake?ref=2040a05b67bf9a669ce17eca56beb14b4206a99a";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-wsl = {
