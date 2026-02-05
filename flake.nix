@@ -7,12 +7,7 @@
     };
 
     private = {
-      url = "git+file:/home/rodney/dotfiles/private";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager?ref=release-25.11";
+      url = "github:input-output-hk/empty-flake?ref=2040a05b67bf9a669ce17eca56beb14b4206a99a";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -23,11 +18,6 @@
 
     nixvim = {
       url = "github:nix-community/nixvim?ref=nixos-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
