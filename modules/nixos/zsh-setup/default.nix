@@ -1,8 +1,10 @@
-{ lib, config, inputs, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
-  cfg = config.modules.zsh-setup;
+  cfg = config.rmkmodules.zsh-setup;
 in {
-  options.modules.zsh-setup.enable = lib.mkEnableOption "Enable ZSH, fzf, bat, etc.";
+  options.rmkmodules.zsh-setup = {
+    enable = lib.mkEnableOption "Enable ZSH, fzf, bat, etc.";
+  };
 
   config = lib.mkIf cfg.enable {
     # Include packages

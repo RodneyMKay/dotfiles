@@ -1,9 +1,11 @@
-{ lib, inputs, defaultUser, config, pkgs, ... }:
+{ lib, defaultUser, config, pkgs, ... }:
 let
-  cfg = config.modules.wsl;
+  cfg = config.rmkmodules.wsl;
 in {
-  options.modules.wsl.enable = lib.mkEnableOption "Enable WSL support in Nix";
-  options.modules.wsl.docker-desktop.enable = lib.mkEnableOption "Enable Docker desktop support for WSL";
+  options.rmkmodules.wsl = {
+    enable = lib.mkEnableOption "Enable WSL support in Nix";
+    docker-desktop.enable = lib.mkEnableOption "Enable Docker desktop support for WSL";
+  };
 
   config = lib.mkIf cfg.enable {
     # WSL settings

@@ -1,8 +1,10 @@
-{ lib, config, inputs, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
-  cfg = config.modules.terraform;
+  cfg = config.rmkmodules.terraform;
 in {
-  options.modules.terraform.enable = lib.mkEnableOption "Enable Terraform/Terragrunt/OpenTofu development tooling";
+  options.rmkmodules.terraform = {
+    enable = lib.mkEnableOption "Enable Terraform/Terragrunt/OpenTofu development tooling";
+  };
 
   config = lib.mkIf cfg.enable {
     # Include packages

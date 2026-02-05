@@ -1,8 +1,10 @@
-{ lib, config, inputs, pkgs, ... }:
+{ lib, config, ... }:
 let
-  cfg = config.modules.neovim;
+  cfg = config.rmkmodules.neovim;
 in {
-  options.modules.neovim.enable = lib.mkEnableOption "Enable Neovim setup";
+  options.rmkmodules.neovim = {
+    enable = lib.mkEnableOption "Enable Neovim setup";
+  };
 
   config = lib.mkIf cfg.enable {
     # Set up nixvim

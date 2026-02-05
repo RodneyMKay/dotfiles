@@ -1,11 +1,6 @@
-{ hostname, defaultUser, inputs, stateVersion, config, lib, pkgs, ... }: {
-  # Import secrets module
-  imports = [
-    inputs.private.nixosModules.secrets
-  ];
-
+{ ... }: {
   # Enable custom modules
-  modules = {
+  rmkmodules = {
     wsl.enable = true;
     wsl.docker-desktop.enable = true;
     dynamic-fix.enable = true;

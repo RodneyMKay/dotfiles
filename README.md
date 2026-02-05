@@ -7,8 +7,14 @@
 
 Just so I don't forget:
 
+With debugging:
 ```
 sudo nixos-rebuild switch --option eval-cache false --show-trace --flake .
+```
+
+With private repo overlay:
+```
+sudo nixos-rebuild switch --override-input private git+file:./private --flake . && omz reload
 ```
 
 ## Useful bits of Nix Knowledge:

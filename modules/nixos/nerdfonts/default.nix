@@ -1,14 +1,16 @@
-{ lib, inputs, defaultUser, config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 let
-  cfg = config.modules.nerdfonts;
+  cfg = config.rmkmodules.nerdfonts;
 in {
-  options.modules.nerdfonts.enable = lib.mkEnableOption "Enable Nerdfont support (JetBrains Mono, currently)";
+  options.rmkmodules.nerdfonts = {
+    enable = lib.mkEnableOption "Enable Nerdfont support (JetBrains Mono, currently)";
+  };
 
   config = lib.mkIf cfg.enable {
     # Enable nerd fonts and set JetBrains Mono as default
     fonts = {
-      packages = with pkgs; [
-        nerdfonts
+      packages = [
+        pkgs.nerdfonts
       ];
 
       fontconfig = {

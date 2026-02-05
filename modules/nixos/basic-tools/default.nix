@@ -1,19 +1,21 @@
 { lib, config, pkgs, ... }:
 let
-  cfg = config.modules.basic-tools;
+  cfg = config.rmkmodules.basic-tools;
 in {
-  options.modules.basic-tools.enable = lib.mkEnableOption "Enable basic command line tools like zip, wget, dig, netcat, etc.";
+  options.rmkmodules.basic-tools = {
+    enable = lib.mkEnableOption "Enable basic command line tools like zip, wget, dig, netcat, etc.";
 
-  options.modules.basic-tools.git.username = lib.mkOption {
-    description = "Username for Git";
-    default = "RodneyMKay";
-    type = lib.types.str;
-  };
+    git.username = lib.mkOption {
+      description = "Username for Git";
+      default = "RodneyMKay";
+      type = lib.types.str;
+    };
 
-  options.modules.basic-tools.git.email = lib.mkOption {
-    description = "Email address for Git";
-    default = "36546810+RodneyMKay@users.noreply.github.com";
-    type = lib.types.str;
+    git.email = lib.mkOption {
+      description = "Email address for Git";
+      default = "36546810+RodneyMKay@users.noreply.github.com";
+      type = lib.types.str;
+    };
   };
 
   config = lib.mkIf cfg.enable {

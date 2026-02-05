@@ -1,8 +1,10 @@
-{ lib, inputs, defaultUser, config, pkgs, ... }:
+{ lib, defaultUser, config, ... }:
 let
-  cfg = config.modules.docker;
+  cfg = config.rmkmodules.docker;
 in {
-  options.modules.docker.enable = lib.mkEnableOption "Enable native docker implementation";
+  options.rmkmodules.docker = {
+    enable = lib.mkEnableOption "Enable native docker implementation";
+  };
 
   config = lib.mkIf cfg.enable {
     # Docker settings

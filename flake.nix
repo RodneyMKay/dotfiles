@@ -7,7 +7,7 @@
     };
 
     private = {
-      url = "github:input-output-hk/empty-flake?ref=2040a05b67bf9a669ce17eca56beb14b4206a99a";
+      url = "github:RodneyMKay/dotfiles?ref=d567047267a5cf4fe1a2b5ea2e1a3f80f7cc2c5d&dir=private-stub";
     };
 
     nixos-wsl = {
@@ -17,6 +17,11 @@
 
     nixvim = {
       url = "github:nix-community/nixvim?ref=nixos-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -38,8 +43,10 @@
       };
       
       modules = [
+        inputs.private.nixosModules.default
         inputs.nixvim.nixosModules.nixvim
         inputs.nixos-wsl.nixosModules.wsl
+        inputs.sops-nix.nixosModules.sops
         ./host-defaults.nix
         ./hosts/${hostname}/configuration.nix
       ];
@@ -61,8 +68,10 @@
 
     nixosModules.default = {...}: {
       imports = [
-        inputs.nixvim.nixosModules.nixvim
+        inputs.private.nixosModules.default
         inputs.nixos-wsl.nixosModules.wsl
+        inputs.nixvim.nixosModules.nixvim
+        inputs.sops-nix.nixosModules.sops
         ./host-defaults.nix
       ];
     };
