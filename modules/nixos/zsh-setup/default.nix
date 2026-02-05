@@ -32,6 +32,11 @@ in {
         lla = "eza -la";
       };
 
+      # Disable special history syntax for bang in strings
+      interactiveShellInit = ''
+        unsetopt histexpand
+      '';
+
       ohMyZsh = {
         enable = true;
 
