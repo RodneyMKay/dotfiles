@@ -2,10 +2,6 @@
 let
   cfg = config.modules.neovim;
 in {
-  imports = [
-    inputs.nixvim.nixosModules.nixvim
-  ];
-
   options.modules.neovim.enable = lib.mkEnableOption "Enable Neovim setup";
 
   config = lib.mkIf cfg.enable {

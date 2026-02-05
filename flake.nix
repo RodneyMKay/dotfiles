@@ -39,8 +39,10 @@
       };
       
       modules = [
-        ./hosts/${hostname}/configuration.nix
+        inputs.nixvim.nixosModules.nixvim
+        inputs.nixos-wsl.nixosModules.wsl
         ./host-defaults.nix
+        ./hosts/${hostname}/configuration.nix
       ];
     };
   in {
@@ -60,6 +62,8 @@
 
     nixosModules.default = {...}: {
       imports = [
+        inputs.nixvim.nixosModules.nixvim
+        inputs.nixos-wsl.nixosModules.wsl
         ./host-defaults.nix
       ];
     };

@@ -5,11 +5,6 @@ in {
   options.modules.wsl.enable = lib.mkEnableOption "Enable WSL support in Nix";
   options.modules.wsl.docker-desktop.enable = lib.mkEnableOption "Enable Docker desktop support for WSL";
 
-  # Import nixos-wsl
-  imports = [
-    inputs.nixos-wsl.nixosModules.wsl
-  ];
-
   config = lib.mkIf cfg.enable {
     # WSL settings
     wsl = {
