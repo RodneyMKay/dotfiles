@@ -57,5 +57,11 @@
       hostname = "apollo";
       defaultUser = "rodney";
     };
+
+    nixosModules.default = {...}: {
+      imports = [
+        ./host-defaults.nix
+      ];
+    };
   };
 }
