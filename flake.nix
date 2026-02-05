@@ -35,7 +35,7 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     stateVersion = "24.05";
 
-    mkSystem = { system, inputs, hostname, defaultUser }: nixpkgs.lib.nixosSystem {
+    mkSystem = { system, hostname, defaultUser }: nixpkgs.lib.nixosSystem {
       inherit system;
       
       specialArgs = {
@@ -53,14 +53,12 @@
     };
   in {
     nixosConfigurations.daedalus = mkSystem {
-      inherit inputs;
       system = "x86_64-linux";
       hostname = "daedalus";
       defaultUser = "rodney";
     };
 
     nixosConfigurations.apollo = mkSystem {
-      inherit inputs;
       system = "x86_64-linux";
       hostname = "apollo";
       defaultUser = "rodney";

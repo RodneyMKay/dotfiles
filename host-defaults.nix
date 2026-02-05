@@ -1,4 +1,4 @@
-{ hostname, stateVersion, config, lib, pkgs, inputs, ... }: {
+{ hostname, stateVersion, ... }: {
   imports = [
     ./modules/nixos
   ];
