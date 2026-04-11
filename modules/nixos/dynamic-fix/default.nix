@@ -1,5 +1,8 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.rmkmodules.dynamic-fix;
 in {
   options.rmkmodules.dynamic-fix = {
@@ -16,4 +19,3 @@ in {
     };
   };
 }
-

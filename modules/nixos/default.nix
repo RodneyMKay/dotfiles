@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./basic-tools
     ./docker
@@ -8,6 +8,6 @@
     ./terraform
     ./wsl
     ./zsh-setup
+    ./private
   ];
 }
-

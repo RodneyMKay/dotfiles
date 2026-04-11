@@ -1,5 +1,9 @@
-{ lib, config, pkgs, ... }:
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.rmkmodules.zsh-setup;
 in {
   options.rmkmodules.zsh-setup = {

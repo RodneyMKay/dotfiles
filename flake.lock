@@ -91,11 +91,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769217863,
-        "narHash": "sha256-RY9kJDXD6+2Td/59LkZ0PFSereCXHdBX9wIkbYjRKCY=",
+        "lastModified": 1774972752,
+        "narHash": "sha256-DnLIpFxznohpLkIFs390uZ0gxwkVyhtknhKNu+lQJK8=",
         "owner": "nix-community",
         "repo": "nixos-wsl",
-        "rev": "38a5250e57f583662eac3b944830e4b9e169e965",
+        "rev": "d97e078f4788cddb8d11c3c99f72a4bb9ddec221",
         "type": "github"
       },
       "original": {
@@ -106,11 +106,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1770136044,
-        "narHash": "sha256-tlFqNG/uzz2++aAmn4v8J0vAkV3z7XngeIIB3rM3650=",
+        "lastModified": 1775811116,
+        "narHash": "sha256-t+HZK42pB6N+i5RGbuy7Xluez/VvWbembBdvzsc23Ss=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e576e3c9cf9bad747afcddd9e34f51d18c855b4e",
+        "rev": "54170c54449ea4d6725efd30d719c5e505f1c10e",
         "type": "github"
       },
       "original": {
@@ -167,51 +167,11 @@
         "type": "github"
       }
     },
-    "private": {
-      "locked": {
-        "dir": "private-stub",
-        "lastModified": 1770319242,
-        "narHash": "sha256-9Sb4WhRRJginjap14CO3kzPANb4tnqmnEkkcX+CM2R8=",
-        "owner": "RodneyMKay",
-        "repo": "dotfiles",
-        "rev": "d567047267a5cf4fe1a2b5ea2e1a3f80f7cc2c5d",
-        "type": "github"
-      },
-      "original": {
-        "dir": "private-stub",
-        "owner": "RodneyMKay",
-        "ref": "d567047267a5cf4fe1a2b5ea2e1a3f80f7cc2c5d",
-        "repo": "dotfiles",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim",
-        "private": "private",
-        "sops-nix": "sops-nix"
-      }
-    },
-    "sops-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1770145881,
-        "narHash": "sha256-ktjWTq+D5MTXQcL9N6cDZXUf9kX8JBLLBLT0ZyOTSYY=",
-        "owner": "Mic92",
-        "repo": "sops-nix",
-        "rev": "17eea6f3816ba6568b8c81db8a4e6ca438b30b7c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "sops-nix",
-        "type": "github"
+        "nixvim": "nixvim"
       }
     },
     "systems": {

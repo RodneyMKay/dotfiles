@@ -1,5 +1,10 @@
-{ lib, defaultUser, config, pkgs, ... }:
-let
+{
+  lib,
+  defaultUser,
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.rmkmodules.wsl;
 in {
   options.rmkmodules.wsl = {
@@ -17,11 +22,10 @@ in {
 
     # We use this package in a WSL scenario, since some applications
     # like the Azure PowerShell Modules require an "xdg-open"
-    # command to be present for authentication via OAuth2 and 
+    # command to be present for authentication via OAuth2 and
     # we just open the browser on the host windows system with this
     environment.systemPackages = [
       pkgs.xdg-utils
     ];
   };
 }
-

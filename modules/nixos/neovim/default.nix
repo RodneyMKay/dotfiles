@@ -1,5 +1,8 @@
-{ lib, config, ... }:
-let
+{
+  lib,
+  config,
+  ...
+}: let
   cfg = config.rmkmodules.neovim;
 in {
   options.rmkmodules.neovim = {
@@ -133,10 +136,9 @@ in {
         autoEnableSources = true;
         settings = {
           sources = [
-            { name = "nvim_lsp"; } # Completion from LSP
-            { name = "path"; }     # Completion for file paths
-            { name = "buffer"; }   # Completion for words in the current file
-
+            {name = "nvim_lsp";} # Completion from LSP
+            {name = "path";} # Completion for file paths
+            {name = "buffer";} # Completion for words in the current file
           ];
 
           mapping = {
@@ -178,12 +180,12 @@ in {
       keymaps = [
         # Keybinds for adding comments
         {
-          mode = [ "n" ];
+          mode = ["n"];
           key = "<C-_>";
           action = "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>";
         }
         {
-          mode = [ "v" "x" ];
+          mode = ["v" "x"];
           key = "<C-_>";
           action = "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>";
         }
@@ -191,4 +193,3 @@ in {
     };
   };
 }
-

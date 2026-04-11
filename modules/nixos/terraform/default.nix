@@ -1,5 +1,9 @@
-{ lib, config, pkgs, ... }:
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.rmkmodules.terraform;
 in {
   options.rmkmodules.terraform = {

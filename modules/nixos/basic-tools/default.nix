@@ -1,5 +1,9 @@
-{ lib, config, pkgs, ... }:
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.rmkmodules.basic-tools;
 in {
   options.rmkmodules.basic-tools = {
@@ -68,7 +72,7 @@ in {
         commit.verbose = "true"; # Show diff when using "git commit" without "-m"
 
         # Make fetch a "mirror remote branches to local remote branches"
-        fetch.prune = "true"; 
+        fetch.prune = "true";
         fetch.pruneTags = "true";
         fetch.all = "true";
 
@@ -78,7 +82,7 @@ in {
         diff.renames = "true";
         diff.algorithm = "histogram"; # Better diff algorithm
 
-        # Better rebase 
+        # Better rebase
         rebase.autoSquash = "true"; # Squash things committed with "--squash"
         rebase.autoStash = "true"; # Stash uncommitted changes before rebase
         rebase.updateRefs = "true"; # Update dependent branches automatically
@@ -101,4 +105,3 @@ in {
     programs.tmux.enable = true;
   };
 }
-

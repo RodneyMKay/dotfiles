@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   # Enable custom modules
   rmkmodules = {
     wsl.enable = true;
@@ -8,6 +8,6 @@
     basic-tools.enable = true;
     zsh-setup.enable = true;
     terraform.enable = true;
-    secrets.enable = true;
+    private.enable = true;
   };
 }

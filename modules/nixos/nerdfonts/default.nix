@@ -1,5 +1,9 @@
-{ lib, config, pkgs, ... }:
-let
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   cfg = config.rmkmodules.nerdfonts;
 in {
   options.rmkmodules.nerdfonts = {
@@ -15,10 +19,9 @@ in {
 
       fontconfig = {
         defaultFonts = {
-          monospace = [ "JetBrainsMono Nerd Font Mono" ];
+          monospace = ["JetBrainsMono Nerd Font Mono"];
         };
       };
     };
   };
 }
-

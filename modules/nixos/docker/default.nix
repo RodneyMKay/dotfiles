@@ -1,5 +1,9 @@
-{ lib, defaultUser, config, ... }:
-let
+{
+  lib,
+  defaultUser,
+  config,
+  ...
+}: let
   cfg = config.rmkmodules.docker;
 in {
   options.rmkmodules.docker = {
@@ -15,6 +19,3 @@ in {
     ];
   };
 }
-
-
-

@@ -1,4 +1,8 @@
-{ hostname, stateVersion, ... }: {
+{
+  hostname,
+  stateVersion,
+  ...
+}: {
   imports = [
     ./modules/nixos
   ];
@@ -8,7 +12,7 @@
   system.stateVersion = stateVersion;
 
   # Always enable flakes, since we use it in this setup
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable regular garbage collection that cleans all packages
   # that are both old and unused
